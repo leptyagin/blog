@@ -24,10 +24,15 @@
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <form action="/" class="col-4">
+                    <form action="{{ route('admin.category.store') }}" method="POST" class="col-4">
+                        @csrf
                         <div class="form-group">
                             <label>Category title</label>
-                            <input type="text" class="form-control" placeholder="Category title">
+                            <input type="text" class="form-control" name="title" placeholder="Category title">
+
+                            @error('title')
+                                <div class="text-danger">Это поле необходимо заполнить</div>
+                            @enderror()
                         </div>
                         <input type="submit" class="btn btn-primary" value="add">
                     </form>
