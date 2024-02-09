@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-5 mt-4">
+                    <div class="col-8 mt-4">
                         <div class="card">
                             <div class="card-body table-responsive p-0">
                                 <table class="table table-hover text-nowrap">
@@ -38,7 +38,7 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Название</th>
-                                            <th>Действия</th>
+                                            <th colspan="2">Действия</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -49,6 +49,11 @@
                                                 <td>
                                                     <a href="{{ route('admin.category.show', $category->id) }}">
                                                         <i class="far fa-eye"></i>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="{{ route('admin.category.edit', $category->id) }}">
+                                                        <i class="fas fa-pencil-alt"></i>
                                                     </a>
                                                 </td>
                                             </tr>
