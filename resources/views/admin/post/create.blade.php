@@ -71,13 +71,26 @@
                         @enderror()
 
                         <div class="form-group col-sm-6">
-                            <label>Select category</label>
+                            <label>Выберите категорию</label>
                             <select class="form-control" name="category_id">
                                 @foreach ($categories as $category)
                                     <option value="{{ $category->id }}"
                                         {{ $category->id == old('category_id') ? 'selected' : '' }}>{{ $category->title }}
                                     </option>
                                 @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-group col-sm-9">
+                            <label>выберите тэги</label>
+                            <select class="select2" multiple="multiple" style="width: 100%;" class="form-control" name="tag_ids[]">
+
+                                @foreach ($tags as $tag)
+                                    <option
+                                    {{ is_array(old('tag_ids')) && in_array($tag->id, old('tag_ids')) ? ' selected' : '' }}
+                                    value="{{ $tag->id }}">{{ $tag->title }}</option>
+                                @endforeach
+
                             </select>
                         </div>
 
