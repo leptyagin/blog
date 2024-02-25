@@ -18,12 +18,12 @@ class StoreController extends Controller
             $tagIds = $data['tag_ids'];
             unset($data['tag_ids']);
 
-            $data['preview_img'] = Storage::put('/image', $data['preview_img']);
-            $data['main_img'] = Storage::put('/image', $data['main_img']);
+            $data['preview_img'] = Storage::disk('public')->put('/image', $data['preview_img']);
+            $data['main_img'] = Storage::disk('public')->put('/image', $data['main_img']);
 
             $post = Post::firstOrCreate($data);
             $post->tags()->attach($tagIds);
-        } catch (\Exception $exeption) {
+        } catch (\Exception $e) {
             abort(404);
         }
 
