@@ -1,7 +1,7 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ route('admin.index') }}" class="brand-link">
+    <a href="{{ route('admin.main.index') }}" class="brand-link">
         <span class="brand-text font-weight-light">Lara Blog</span>
     </a>
 
@@ -9,6 +9,12 @@
     <div class="sidebar">
         <ul class="pt-3 nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
+                <a href="{{ route('admin.main.index') }}" class="nav-link">
+                    <i class="nav-icon fas fa-home"></i>
+                    <p>Home</p>
+                </a>
+            </li>
+            <li class="nav-item mt-2">
                 <a href="{{ route('admin.user.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-users"></i>
                     <p>users</p>
