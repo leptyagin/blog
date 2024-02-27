@@ -47,14 +47,6 @@
                                 <div class="text-danger">Это поле необходимо заполнить</div>
                             @enderror()
                         </div>
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input type="text" class="form-control" name="password" placeholder="password">
-
-                            @error('password')
-                                <div class="text-danger">Это поле необходимо заполнить</div>
-                            @enderror()
-                        </div>
                         <input type="submit" class="btn btn-primary" value="Добавить">
                     </form>
                 </div>
